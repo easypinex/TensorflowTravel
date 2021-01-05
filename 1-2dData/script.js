@@ -22,7 +22,10 @@ function createModel() {
     const model = tf.sequential();
     // 新增一個 輸入層, 該輸入層連接至 dense 隱藏層 
     //      params: inputShape: 1代表1個數字 , units 1 代表一個數字權重是1
-    model.add(tf.layers.dense({ inputShape: [1], units: 1, useBias: true }));
+    model.add(tf.layers.dense({ inputShape: [1], units: 10, useBias: true }));
+    model.add(tf.layers.dense({units: 20, activation: 'sigmoid'}));
+    model.add(tf.layers.dense({units: 30, activation: 'sigmoid'}));
+    model.add(tf.layers.dense({units: 20, activation: 'sigmoid'}));
     // 建立輸出層
     //      params: units 1 代表要輸出一個數字
     model.add(tf.layers.dense({ units: 1, useBias: true }));
